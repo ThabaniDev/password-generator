@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!--  SEO info  -->
+		<meta
+			name="description"
+			content="A simple password generator that generates a password based on the user's input."
+		/>
+		<meta
+			name="keywords"
+			content="thabanidev, ThabaniDev, password, generator, password generator, thabani, takwena, thabani takwena, thabani-takwena, thabani_takwena, thabanitakwena, thabanidev.github.io, thabanidev.github.io/password-generator, thabanidev.github.io/password-generator/"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+		<title>Password Generator (Thabani Takwena)</title>
+
+		<style>
+			input[type="checkbox"] {
+				width: 1.7rem;
+				height: 1.7rem;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body class="bg-dark text-light user-select-none fs-2">
+		<header class="container container-fluid text-center p-3 mb-3">
+			<h1 class="fw-bold display-2">Password Generator</h1>
+		</header>
+
+		<!-- Password Options -->
+		<form class="container p-3 mb-3" id="password-generator-form">
+			<div class="container d-inline">
+				<label for="number-of-characters" class="form-check-label"
+					>Number of characters (
+					<span id="range-value" class="lead fs-3 fw-bold">6</span>
+					)</label
+				>
+				<input
+					type="range"
+					class="form-range"
+					name="number-of-characters"
+					id="number-of-characters"
+					min="4"
+					max="16"
+					step="1"
+					value="6"
+					oninput="updateRangeValue()"
+				/>
+			</div>
+			<div
+				class="container d-flex flex-column flex-lg-row align-items-center justify-content-center"
+			>
+				<div class="container mb-3 d-inline">
+					<input
+						type="checkbox"
+						class="form-check-inline"
+						name="uppercase"
+						id="uppercase"
+					/>
+					<label for="uppercase" class="form-check-label">Uppercase</label>
+				</div>
+				<div class="container mb-3 d-inline">
+					<input
+						type="checkbox"
+						class="form-check-inline"
+						name="lowercase"
+						id="lowercase"
+					/>
+					<label for="lowercase" class="form-check-label">Lowercase</label>
+				</div>
+				<div class="container mb-3 d-inline">
+					<input
+						type="checkbox"
+						class="form-check-inline"
+						name="numbers"
+						id="numbers"
+					/>
+					<label for="numbers" class="form-check-label">Numbers</label>
+				</div>
+				<div class="container mb-3 d-inline">
+					<input
+						type="checkbox"
+						class="form-check-inline"
+						name="special-characters"
+						id="special-characters"
+					/>
+					<label for="special-characters" class="form-check-label"
+						>Special</label
+					>
+				</div>
+			</div>
+
+			<div
+				class="container mb-3 d-flex align-items-center justify-content-center"
+			>
+				<input
+					type="submit"
+					value="Generate password"
+					class="btn btn-primary btn-lg mt-3 w-75 fs-3 fw-semibold"
+				/>
+			</div>
+		</form>
+
+		<section class="container mb-5 d-flex flex-column flex-lg-row">
+			<div class="container input-group">
+				<input
+					type="text"
+					class="form-control fw-bold"
+					placeholder="Generated password..."
+					id="password"
+					readonly
+					disabled
+				/>
+				<button class="btn btn-success btn-lg" onclick="copyPassword()">
+					Copy
+				</button>
+			</div>
+		</section>
+
+		<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
