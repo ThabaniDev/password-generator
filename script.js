@@ -20,8 +20,7 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 	let uppercaseCheckbox = passwordOptionsForm["uppercase"].checked;
 	let lowercaseCheckbox = passwordOptionsForm["lowercase"].checked;
 	let numbersCheckbox = passwordOptionsForm["numbers"].checked;
-	let specialCharactersCheckbox =
-		passwordOptionsForm["symbols"].checked;
+	let specialCharactersCheckbox = passwordOptionsForm["symbols"].checked;
 
 	if (numbersCheckbox) {
 		chars += passwordOptions.numbers;
@@ -50,10 +49,9 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 	document.querySelector("#password").value = password;
 });
 
-async function copyPassword()
-{
+async function copyPassword() {
 	let password = document.querySelector("#password").value;
-	try	{
+	try {
 		await navigator.clipboard.writeText(password);
 		alert("Password copied to clipboard: " + password);
 	} catch (err) {
