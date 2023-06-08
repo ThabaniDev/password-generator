@@ -53,7 +53,7 @@ async function copyPassword() {
 	let password = document.querySelector("#password").value;
 	try {
 		await navigator.clipboard.writeText(password);
-		alert("Password copied to clipboard: " + password);
+		alert("Password copied: " + password);
 	} catch (err) {
 		console.error("Failed to copy: ", err);
 	}
