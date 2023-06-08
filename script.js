@@ -3,7 +3,7 @@ let passwordOptions = {
 	numbers: "123456789",
 	uppercase: "ABCDEFGHIJKLMONPQRSTUVWXYZ",
 	lowercase: "abcdefghijklmnopqrstuvwxyz",
-	special: "~!@#$%&*_+",
+	symbols: "~!@#$%&*_+\|][{}=-)(?",
 };
 let rangeInput = document.querySelector("#number-of-characters");
 
@@ -21,7 +21,7 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 	let lowercaseCheckbox = passwordOptionsForm["lowercase"].checked;
 	let numbersCheckbox = passwordOptionsForm["numbers"].checked;
 	let specialCharactersCheckbox =
-		passwordOptionsForm["special-characters"].checked;
+		passwordOptionsForm["symbols"].checked;
 
 	if (numbersCheckbox) {
 		chars += passwordOptions.numbers;
@@ -30,7 +30,7 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 		chars += passwordOptions.uppercase;
 	}
 	if (specialCharactersCheckbox) {
-		chars += passwordOptions.special;
+		chars += passwordOptions.symbols;
 	}
 	if (lowercaseCheckbox) {
 		chars += passwordOptions.lowercase;
@@ -38,7 +38,7 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 
 	if (chars.length <= 0) {
 		alert(
-			"Please select at least one option\n1. Uppercase\n2. Lowercase\n3. Numbers\n4. Special characters"
+			"Please select at least one option\n1. Uppercase\n2. Lowercase\n3. Numbers\n4. Symbols"
 		);
 	} else {
 		for (let i = 0; i < numberOfCharacters; i++) {
