@@ -50,9 +50,13 @@ passwordOptionsForm.addEventListener("submit", (e) => {
 	document.querySelector("#password").value = password;
 });
 
-function copyPassword()
+async function copyPassword()
 {
 	let password = document.querySelector("#password").value;
-
-	alert("Password copied to clipboard");
+	try	{
+		await navigator.clipboard.writeText(password);
+		alert("Password copied to clipboard: " + password);
+	} catch (err) {
+		console.error("Failed to copy: ", err);
+	}
 }
