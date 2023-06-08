@@ -3,7 +3,7 @@ let passwordOptions = {
 	numbers: "123456789",
 	uppercase: "ABCDEFGHIJKLMONPQRSTUVWXYZ",
 	lowercase: "abcdefghijklmnopqrstuvwxyz",
-	symbols: "~!@#$%&*_+\|][{}=-)(?",
+	symbols: "~!@#$%&*_+-?",
 };
 let rangeInput = document.querySelector("#number-of-characters");
 
